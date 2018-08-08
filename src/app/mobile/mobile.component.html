@@ -1,4 +1,5 @@
-<table class="table table-bordered">
+<table class="table table-bordered" *ngIf='mobiles.length'>
+	<caption class="text-center">Mobiles By Hsagarthegr8</caption>
 	<thead>
 		<th><a href='#' (click)='sortBy("mobId")'>Mobile Id</a></th>
 		<th><a href='#' (click)='sortBy("mobName")'>Mobile Name</a></th>
@@ -19,10 +20,13 @@
 	</tbody>
 </table>
 
-<div>
+<div *ngIf='logs.length'>
 	<h4>Logs</h4>
 	<button class="btn btn-alert float-right" (click)='clearLogs()'>Clear Logs</button>
 	<ul>
 		<li *ngFor='let log of logs'>{{log}}</li>
 	</ul>
 </div>
+<footer>
+	<strong>This Project is Made By Hsagarthegr8.</strong>
+</footer>
