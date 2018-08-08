@@ -1,0 +1,28 @@
+<table class="table table-bordered">
+	<thead>
+		<th><a href='#' (click)='sortBy("mobId")'>Mobile Id</a></th>
+		<th><a href='#' (click)='sortBy("mobName")'>Mobile Name</a></th>
+		<th><a href='#' (click)='sortBy("mobPrice")'>Mobile Price</a></th>
+		<th><a href='#'>Action</a></th>
+	</thead>
+	<tbody>
+		<tr *ngFor='let mobile of mobiles'>
+			<td>{{ mobile.mobId }}</td>
+			<td>{{ mobile.mobName }}</td>
+			<td>{{ mobile.mobPrice | currency}}</td>
+			<td>
+				<button class="btn btn-outline-danger" (click)='deleteMobile(mobile.mobId)'>
+					Delete
+				</button>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div>
+	<h4>Logs</h4>
+	<button class="btn btn-alert float-right" (click)='clearLogs()'>Clear Logs</button>
+	<ul>
+		<li *ngFor='let log of logs'>{{log}}</li>
+	</ul>
+</div>
